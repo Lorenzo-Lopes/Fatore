@@ -1,8 +1,8 @@
-nome = "Fulano"
-altura= 1.80
-peso = 95 
+#Peça um número e diga se ele é par ou ímpar.
 
-imc = peso/(altura**2)
+numero = int(input("Digite um numero: "))
 
-print(f"Olá {nome} Calculamos seu imc e o resultado foi: {imc}")
-print(f"Olá {nome} Calculamos seu imc e o resultado foi: {imc:.2f}") # monstrando apenas 2 casas decimais.
+if (numero%2)==0:
+    print("O valor digitado é PAR")
+else:
+    print("O valor digitado é impar")
