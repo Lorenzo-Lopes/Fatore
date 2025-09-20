@@ -1,7 +1,11 @@
 # Crie uma lista com 5 nomes de amigos e exiba cada nome.
 
-
+#               0      1     2       3            4
 lista_nomes = ["joao","ana","clara","ana eleisa","Lorenzo"]
+
+
+
+
 
 print(lista_nomes[0])
 print(lista_nomes[1])
