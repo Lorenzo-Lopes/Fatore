@@ -12,3 +12,4 @@ try:
     print(f"A area calculada foi: {area}")
 except:
     print("O valor informado nao é um numero!")
+print("fora do bloco de codigo")
