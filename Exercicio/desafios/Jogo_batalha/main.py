@@ -1,5 +1,7 @@
 import os
 from time import sleep
+import getpass
+
 class jogador():
 
     def __init__(self, vida, defesa, ataque,pocao):
@@ -8,33 +10,37 @@ class jogador():
         self.ataque =   ataque
         self.pocao =    pocao
 
-p1 =jogador(100,100,15,3)
-p2=jogador(100,100,15,3)
+p1 =jogador(100,100,25,2)
+p2=jogador(100,100,25,2)
 
-def start_combat():
-    while p1.vida>0 or p2.vida>1:
-        print('Jogador 1: Digite 1-ataque | 2-Defender| 3- Curar')
-        acaoP1 = input('Digite sua Ação: ')
-        os.system('clear')
-        print('Jogador 2: Digite 1-ataque | 2-Defender| 3- Curar')
-        acaoP2 = input('Digite sua Ação: ')
-        print("Ações registradas. Iniciando combate.")
-        for i in range(3):
-            print('. ',end='')
-            sleep(0.5)
-            print("\n")
+# def start_combat():
+#     while p1.vida>0 or p2.vida>1:
+#         print('Jogador 1: Digite 1-ataque | 2-Defender| 3- Curar')
+#         acaoP1 = input('Digite sua Ação: ')
+#         os.system('clear')
+#         print('Jogador 2: Digite 1-ataque | 2-Defender| 3- Curar')
+#         acaoP2 = input('Digite sua Ação: ')
+#         print("Ações registradas. Iniciando combate.")
+#         for i in range(3):
+#             print('. ',end='')
+#             sleep(0.5)
+#             print("\n")
         
 def p1_action():
-    op1 = int(input("Qual vai ser sua ação?"))
+    op1 = int(getpass.getpass("JOgador 1: Qual vai ser sua ação?"))
     os.system('clear')
+    return op1
 
 def p2_action():
-    op2 = input(input("Qual vai ser sua ação?"))
+    op2 = int(getpass.getpass("Jogador 2: Qual vai ser sua ação?"))
     os.system('clear')
+    return op2
 
 while p1.vida or p2.vida: 
     op1= p1_action()
     op2=p2_action()
+    print("teste")
+
 
     if op1 == 1 and op2 == 1:
         p1.vida -= p2.ataque
@@ -95,7 +101,10 @@ while p1.vida or p2.vida:
     print(f'Vida Jogador 1: {p1.vida} | Vida Jogador 2: {p2.vida}')
     print(f'Poções Jogador 1: {p1.pocao} | Poções Jogador 2: {p2.pocao}')
     print('-----------------------------------')
-    if p1.vida <= 0:
+    
+    if p1.vida <=0 and p2.vida <= 0:
+        print("EMPATE")
+    elif p1.vida <= 0:
         print('Jogador 2 Venceu!')
         break
     elif p2.vida <= 0:
