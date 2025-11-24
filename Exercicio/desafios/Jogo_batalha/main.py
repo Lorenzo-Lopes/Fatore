@@ -27,7 +27,7 @@ p2=jogador(100,100,25,2)
 #             print("\n")
         
 def p1_action():
-    op1 = int(getpass.getpass("JOgador 1: Qual vai ser sua ação?"))
+    op1 = int(getpass.getpass("Jogador 1: Qual vai ser sua ação?"))
     os.system('clear')
     return op1
 
